@@ -15,7 +15,7 @@ const PricingSection: React.FC = () => {
         "Leitura em 1 tela"
       ],
       featured: false,
-      cta: "ASSINAR MENSAL",
+      cta: "ACESSO MENSAL",
       paymentUrl: "https://pay.hub.la/QmOV462p7DuKDNOjsuot"
     },
     {
@@ -34,8 +34,8 @@ const PricingSection: React.FC = () => {
       ],
       featured: true,
       popular: true,
-      cta: "LIBERAR MEU ACESSO ELITE",
-      paymentUrl: "https://pay.hub.la/Bj0dh5ysuHZNH2H2pASs"
+      cta: "QUERO ACESSO ELITE",
+      paymentUrl: "https://pay.hub.la/aM4b8Qtc4vTApguoKmKM"
     },
     {
       name: "Membro Royal",
@@ -53,7 +53,7 @@ const PricingSection: React.FC = () => {
       ],
       featured: false,
       cta: "ACESSO ROYAL ANUAL",
-      paymentUrl: "https://pay.hub.la/XYT31fiDy0Fdfjtfu5gb"
+      paymentUrl: "https://pay.hub.la/8mKZYwCh4DM0s2JqwGQF"
     }
   ];
 

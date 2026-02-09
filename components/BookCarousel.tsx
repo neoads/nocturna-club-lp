@@ -3,12 +3,22 @@ import React from 'react';
 
 const BookCarousel: React.FC = () => {
   const books = [
-    { title: "Sombras do Passado", tag: "STALKER", cover: "https://images.unsplash.com/photo-1543004276-8869c99661f4?q=80&w=350&auto=format&fit=crop" },
-    { title: "Desejo Obscuro", tag: "RIVALRY", cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=350&auto=format&fit=crop" },
-    { title: "Obsessão Fatal", tag: "FORBIDDEN", cover: "https://images.unsplash.com/photo-1531988042231-d39a9cc12a9a?q=80&w=350&auto=format&fit=crop" },
-    { title: "Segredos de Sangue", tag: "MAFIA", cover: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=350&auto=format&fit=crop" },
-    { title: "Pacto de Silêncio", tag: "DARK ACADEMY", cover: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=350&auto=format&fit=crop" },
-    { title: "Ruína e Prazer", tag: "AGE GAP", cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=350&auto=format&fit=crop" },
+    { title: "Seu Inferno Particular", tag: "DARK ROMANCE", cover: "/images/1.webp" },
+    { title: "A Vinha Proibida", tag: "FORBIDDEN", cover: "/images/818X6R+akeL._UF1000,1000_QL80_.jpg" },
+    { title: "Presa à Máfia", tag: "MAFIA", cover: "/images/coverorgin.jpg" },
+    { title: "Capturada", tag: "DARK ROMANCE", cover: "/images/images (1).jpeg" },
+    { title: "Sagrado e Profano", tag: "FORBIDDEN", cover: "/images/sagrado-e-profano---livro-1---judas-dark-romance-25652435-020820240220.jpg" },
+    { title: "Love in the Dark", tag: "DARK ROMANCE", cover: "/images/lvitd-o6sm9uwdqj.webp" },
+    { title: "Amores Furtados", tag: "MAFIA", cover: "/images/41DSDNWGbkL.jpg" },
+    { title: "Verity", tag: "THRILLER", cover: "/images/91SDZ2eUj+L.jpg" },
+    { title: "Vendida", tag: "DARK ROMANCE", cover: "/images/61g1ic0jB0L._UF1000,1000_QL80_.jpg" },
+    { title: "Our Dark Duet", tag: "DARK ACADEMY", cover: "/images/81zanmNv8NL._AC_UF1000,1000_QL80_.jpg" },
+    { title: "Princesa Distorcida", tag: "MAFIA", cover: "/images/91V6kGecfJL._UF1000,1000_QL80_.jpg" },
+    { title: "Mais Quente que Fogo", tag: "DARK ELEMENTS", cover: "/images/51SHC2Te85L.jpg" },
+    { title: "Perverta-me", tag: "DARK ROMANCE", cover: "/images/images.jpeg" },
+    { title: "My Dark Heart", tag: "DARK ROMANCE", cover: "/images/MY_DARK_HEART__UM_DARK_ROMANC_1730400380122517690SK-V11730400380B.webp" },
+    { title: "Desejo Proibido", tag: "FORBIDDEN", cover: "/images/9798751376918.webp" },
+    { title: "Obsessão", tag: "DARK ROMANCE", cover: "/images/coverorgin.webp" },
   ];
 
   // Duplicamos a lista para criar o efeito de scroll infinito sem saltos
@@ -22,9 +32,9 @@ const BookCarousel: React.FC = () => {
           <p className="text-white/30 text-[10px] md:text-xs uppercase tracking-[0.4em] font-black italic">Histórias originais que você só encontra aqui</p>
         </div>
         <div className="hidden md:flex gap-3">
-           <div className="w-12 h-1 bg-red-600 rounded-full"></div>
-           <div className="w-4 h-1 bg-white/10 rounded-full"></div>
-           <div className="w-4 h-1 bg-white/10 rounded-full"></div>
+          <div className="w-12 h-1 bg-red-600 rounded-full"></div>
+          <div className="w-4 h-1 bg-white/10 rounded-full"></div>
+          <div className="w-4 h-1 bg-white/10 rounded-full"></div>
         </div>
       </div>
 
@@ -33,15 +43,15 @@ const BookCarousel: React.FC = () => {
           <div key={i} className="flex-none w-64 md:w-80 px-4 group">
             <div className="relative aspect-[2/3] overflow-hidden rounded-2xl border border-white/10 transition-all duration-700 group-hover:border-red-600 group-hover:scale-[1.03] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)]">
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10" />
-              <img 
-                src={book.cover} 
-                alt={book.title} 
-                className="w-full h-full object-cover grayscale-[0.4] group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100" 
+              <img
+                src={book.cover}
+                alt={book.title}
+                className="w-full h-full object-cover grayscale-[0.4] group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
                 loading="lazy"
               />
               <div className="absolute bottom-0 left-0 p-8 z-20 w-full transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
                 <span className="inline-block px-3 py-1 bg-red-600 text-[8px] md:text-[10px] font-black uppercase tracking-widest text-white mb-4 rounded-sm">
-                   {book.tag}
+                  {book.tag}
                 </span>
                 <h3 className="text-lg md:text-2xl font-serif font-bold text-white leading-tight group-hover:text-red-500 transition-colors">
                   {book.title}
@@ -51,7 +61,7 @@ const BookCarousel: React.FC = () => {
           </div>
         ))}
       </div>
-      
+
       {/* Gradientes laterais para suavizar a entrada/saída dos itens */}
       <div className="absolute inset-y-0 left-0 w-32 md:w-64 bg-gradient-to-r from-[#020202] to-transparent z-30 pointer-events-none" />
       <div className="absolute inset-y-0 right-0 w-32 md:w-64 bg-gradient-to-l from-[#020202] to-transparent z-30 pointer-events-none" />

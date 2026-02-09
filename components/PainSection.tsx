@@ -23,20 +23,20 @@ const PainSection: React.FC = () => {
             </p>
           </div>
         </div>
-        
+
         <div className="relative reveal [animation-delay:0.3s]">
           <div className="absolute -top-10 -right-10 w-64 h-64 bg-red-600/10 rounded-full blur-[100px] animate-pulse"></div>
           <div className="relative bg-[#0a0a0a] p-10 md:p-20 rounded-2xl border border-white/5 shadow-[0_50px_100px_rgba(0,0,0,0.8)] overflow-hidden group">
             <div className="absolute top-0 right-0 w-48 h-48 bg-red-900/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
             <div className="flex gap-2 mb-10">
-              {[1,2,3,4,5].map(i => <span key={i} className="text-red-600 text-sm">★</span>)}
+              {[1, 2, 3, 4, 5].map(i => <span key={i} className="text-red-600 text-sm">★</span>)}
             </div>
             <p className="text-2xl md:text-4xl font-serif italic text-white/90 mb-16 leading-[1.3]">
               "Sempre me senti 'errada' por gostar de vilões. No Nocturna, descobri que minha sede por intensidade é o que me torna parte dessa elite. É indescritível."
             </p>
             <div className="flex items-center gap-6">
               <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-600 to-black p-[2px]">
-                 <div className="w-full h-full rounded-full bg-[#0a0a0a] flex items-center justify-center font-bold text-xl">M</div>
+                <img src="/images/MODELO MARIANA.jpg" alt="Mariana V." className="w-full h-full rounded-full object-cover" />
               </div>
               <div>
                 <span className="block text-sm md:text-lg font-bold text-white uppercase tracking-[0.3em]">Mariana V.</span>

@@ -8,26 +8,32 @@ const PlatformPreview: React.FC = () => {
     library: {
       title: "Sua Estante Obscura",
       desc: "Organize suas obsessões por tropos e autores favoritos.",
-      img: "https://images.unsplash.com/photo-1543004276-8869c99661f4?q=80&w=600&auto=format&fit=crop",
+      img: "/images/MOCKUP 1.jpg",
       badge: "BIBLIOTECA"
     },
     reader: {
       title: "Imersão Premium",
       desc: "Modo noturno profundo e fontes feitas para leitura longa.",
-      img: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=600&auto=format&fit=crop",
+      img: "/images/MOCKUP 2.jpg",
       badge: "LEITOR"
     },
     community: {
       title: "Área de Memes & Surto",
       desc: "Onde as sócias compartilham teorias e surtos literários.",
-      img: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=600&auto=format&fit=crop",
+      img: "/images/MOCKUP 3.jpg",
       badge: "COMUNIDADE"
     }
   };
 
   return (
-    <section id="experiencia" className="py-24 md:py-40 px-6 relative overflow-hidden bg-[#030303]">
-      <div className="max-w-7xl mx-auto">
+    <section id="experiencia" className="py-24 md:py-40 px-6 relative bg-[#030303]">
+      {/* Ambient background effects */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-red-900/10 rounded-full blur-[150px] animate-pulse"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-red-600/5 rounded-full blur-[120px]"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16 md:mb-24 reveal">
           <h2 className="text-4xl md:text-8xl font-serif italic leading-tight mb-6">
             O Clube por <span className="text-red-600 not-italic font-black uppercase">Dentro.</span>
@@ -37,18 +43,18 @@ const PlatformPreview: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 md:gap-24 items-center">
-          {/* Navegação de Funcionalidades */}
+        {/* Grid layout com botões e iPhone lado a lado */}
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+          {/* Botões à esquerda */}
           <div className="space-y-4 md:space-y-8 order-2 lg:order-1">
             {(Object.keys(features) as Array<keyof typeof features>).map((key) => (
-              <button 
+              <button
                 key={key}
                 onClick={() => setActiveTab(key)}
-                className={`w-full text-left p-6 md:p-10 rounded-3xl border transition-all duration-500 group relative overflow-hidden ${
-                  activeTab === key 
-                  ? 'bg-red-950/10 border-red-600/50 shadow-[0_20px_40px_rgba(158,0,0,0.1)]' 
+                className={`w-full text-left p-6 md:p-10 rounded-3xl border transition-all duration-500 group relative overflow-hidden ${activeTab === key
+                  ? 'bg-red-950/10 border-red-600/50 shadow-[0_20px_40px_rgba(158,0,0,0.1)]'
                   : 'bg-white/[0.02] border-white/5 hover:border-white/10'
-                }`}
+                  }`}
               >
                 <span className={`text-[9px] font-black tracking-[0.3em] uppercase mb-3 block ${activeTab === key ? 'text-red-500' : 'text-white/20'}`}>
                   {features[key].badge}
@@ -63,53 +69,33 @@ const PlatformPreview: React.FC = () => {
             ))}
           </div>
 
-          {/* Mockup do App Dinâmico (Mobile First) */}
-          <div className="relative order-1 lg:order-2 flex justify-center sticky top-20 md:top-32 h-fit mb-12 lg:mb-0">
-            <div className="relative w-[280px] md:w-[350px] h-[550px] md:h-[700px] bg-[#050505] border-[8px] border-[#1a1a1a] rounded-[3rem] md:rounded-[3.5rem] shadow-[0_100px_100px_-50px_rgba(158,0,0,0.3)] overflow-hidden">
-               {/* App UI Elements */}
-               <div className="absolute top-0 left-0 w-full h-16 md:h-20 bg-black/80 backdrop-blur-md z-20 flex items-end px-6 md:px-8 pb-4 justify-between border-b border-white/5">
-                  <span className="text-lg md:text-xl font-serif italic text-red-600">Nocturna</span>
-                  <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
-                    <div className="w-4 h-0.5 bg-white/30 rounded-full"></div>
-                  </div>
-               </div>
-
-               {/* App Content Display */}
-               <div className="pt-20 md:pt-24 px-4 md:px-6 h-full overflow-y-auto no-scrollbar pb-20 md:pb-24">
-                  <div className="animate-fade-in" key={activeTab}>
-                    <img 
-                      src={features[activeTab as keyof typeof features].img} 
-                      className="w-full aspect-[4/5] object-cover rounded-xl md:rounded-2xl mb-6 shadow-2xl grayscale-[0.2]"
-                      alt="App Interface Preview"
-                    />
-                    <div className="space-y-3">
-                       <div className="h-1.5 w-1/4 bg-red-600 rounded"></div>
-                       <div className="h-3 w-full bg-white/5 rounded"></div>
-                       <div className="h-3 w-4/5 bg-white/5 rounded"></div>
-                       <div className="grid grid-cols-2 gap-3 pt-4">
-                          <div className="aspect-[3/4] bg-white/5 rounded-lg border border-white/5 relative overflow-hidden">
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                          </div>
-                          <div className="aspect-[3/4] bg-white/5 rounded-lg border border-white/5 relative overflow-hidden">
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                          </div>
-                       </div>
-                    </div>
-                  </div>
-               </div>
-
-               {/* App Bottom Bar */}
-               <div className="absolute bottom-0 left-0 w-full h-14 md:h-16 bg-black/90 backdrop-blur-md z-20 flex items-center justify-around border-t border-white/5">
-                  <div className="w-5 h-5 rounded-sm bg-red-600 opacity-80"></div>
-                  <div className="w-5 h-5 rounded-sm bg-white/10"></div>
-                  <div className="w-5 h-5 rounded-sm bg-white/10"></div>
-                  <div className="w-5 h-5 rounded-sm bg-white/10"></div>
-               </div>
+          {/* iPhone Mockup - Centralizado ao lado dos botões */}
+          <div className="relative order-1 lg:order-2 flex justify-center items-center mb-12 lg:mb-0">
+            {/* Glow effect behind the phone */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="w-[400px] h-[600px] md:w-[600px] md:h-[900px] bg-red-600/20 blur-[150px] rounded-full"></div>
             </div>
 
-            {/* Glowing Effects */}
-            <div className="absolute -right-10 top-20 w-32 h-32 bg-red-600/10 blur-3xl rounded-full"></div>
-            <div className="absolute -left-10 bottom-20 w-32 h-32 bg-red-600/10 blur-3xl rounded-full"></div>
+            {/* iPhone Frame */}
+            <div className="relative group">
+              <img
+                src={"/images/MOCKUP IPHONE.png?" + Date.now()}
+                alt="iPhone Frame"
+                style={{ width: '800px', height: 'auto' }}
+                className="relative z-20 drop-shadow-[0_50px_100px_rgba(0,0,0,0.8)] transition-transform duration-700 group-hover:scale-105"
+              />
+
+              {/* Floating particles effect */}
+              <div className="absolute -top-10 -right-10 w-20 h-20 bg-red-500/10 rounded-full blur-2xl animate-bounce"></div>
+              <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-red-600/10 rounded-full blur-2xl animate-pulse"></div>
+
+              {/* Reflection/shine effect */}
+              <div className="absolute inset-0 z-30 bg-gradient-to-br from-white/5 via-transparent to-transparent rounded-[3rem] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            </div>
+
+            {/* Decorative elements */}
+            <div className="absolute -right-20 top-10 w-40 h-40 border border-red-600/10 rounded-full hidden lg:block"></div>
+            <div className="absolute -left-10 bottom-10 w-20 h-20 border border-white/5 rounded-full hidden lg:block"></div>
           </div>
         </div>
       </div>
